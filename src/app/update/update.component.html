@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"></label>
+        <input 
+            type="search" 
+            class="form-control" 
+            id="exampleFormControlInput1" 
+            placeholder="Enter Id To Update"
+            (search)="onUpdate($event)"
+            >
+      </div>
+ 
+      <div class="FormAlignment">
+          
+      <form [formGroup]="editCustomer" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">CustomerId</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="CustomerId"
+              
+            />
+            
+          </div>
+    
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="Name" />
+          </div>
+    
+          <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="number" class="form-control" formControlName="Age" />
+          </div>
+
+    
+          <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <input type="text" class="form-control" formControlName="Gender" />
+          </div>
+
+          <div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form> 
+        
+        <!-- <form [formGroup]="RecordToEdit" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label">CustomerId</label>
+              <input
+                type="number"
+                class="form-control"
+                
+                
+              />
+            </div>
+      
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" />
+            </div>
+      
+            <div class="mb-3">
+              <label class="form-label">Age</label>
+              <input type="number" class="form-control" />
+            </div>
+  
+      
+            <div class="mb-3">
+              <label class="form-label">Gender</label>
+              <input type="text" class="form-control" />
+            </div>
+  
+            <div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form> -->
+    </div>
+
+      <!-- <table class="table border mb-5">
+
+        <tbody>
+          <tr *ngFor="let item of RecordToEdit">
+            <th>{{item.CustomerId}}</th>
+            <td>{{item.Name}}</td>
+            <td>{{item.Age}}</td>
+            <td>{{item.Gender}}</td>
+          </tr>
+        </tbody>
+      </table>  -->
+
+</div>

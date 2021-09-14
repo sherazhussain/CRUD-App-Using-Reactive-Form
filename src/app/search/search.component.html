@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"></label>
+        <input 
+            type="search" 
+            class="form-control" 
+            id="exampleFormControlInput1" 
+            placeholder="Enter Name To Search"
+            (search)="onSearch($event)"
+            >
+      </div>
+
+
+
+      <table class="table" *ngFor="let item of SearchResult">
+        <thead>
+          <tr>
+            <th>CustomerId</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>{{item.CustomerId}}</th>
+            <td>{{item.Name}}</td>
+            <td>{{item.Age}}</td>
+            <td>{{item.Gender}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button (click)="onClick()" class="btn btn-primary mt-3">Go To HomePage</button>
+</div>

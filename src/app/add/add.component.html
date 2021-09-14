@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="FormAlignment">
+    <form [formGroup]="customer" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">CustomerId</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="CustomerId"
+        />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          customer.get('CustomerId')?.invalid &&
+          customer.get('CustomerId')?.touched
+        "
+      >
+        CustomerId is Required
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="Name" />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          customer.get('Name')?.invalid &&
+          customer.get('Name')?.touched
+        "
+      >
+        Name is Required
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" class="form-control" formControlName="Age" />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          customer.get('Age')?.invalid &&
+          customer.get('Age')?.touched
+        "
+      >
+        Age is Required
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <input type="text" class="form-control" formControlName="Gender" />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          customer.get('Gender')?.invalid &&
+          customer.get('Gender')?.touched
+        "
+      >
+        Gender is Required
+      </div>
+
+      <div>
+        <button class="btn btn-primary" type="submit" [disabled]="customer.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
